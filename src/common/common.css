@@ -1,0 +1,17 @@
+.f-cb::after {
+  display: block;
+  clear: both;
+  overflow: hidden;
+  content: "";
+}
+
+.f-toe {
+  overflow: hidden;
+  word-wrap: normal;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.f-textspace {
+  padding: 0 4px;
+}
