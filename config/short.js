@@ -7,7 +7,8 @@ let suffix = isProd ? 'html' : 'html'
 let basepath = path.resolve(__dirname, './') 
 baseconfig.plugins.push(new HtmlWebpackPlugin({
   filename: isProd ? path.resolve(basepath, '../dist/avg.html') : 'index.html',
-  template: path.resolve(basepath, '../src/page/short/instruction/template.' + suffix)
+  template: path.resolve(basepath, '../src/page/short/instruction/template.' + suffix),
+  title: '标题'
 }))
 
 baseconfig.entry = {

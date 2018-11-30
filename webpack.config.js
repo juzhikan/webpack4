@@ -23,6 +23,16 @@ var postcssPlugins = [
   })
 ]
 
+var os = require('os');
+console.log('===================')
+console.log('======user=======')
+console.log(os.homedir())
+console.log('======current=======')
+console.log(__dirname)
+console.log('======cwd=======')
+console.log(process.cwd())
+console.log('===================')
+
 let isProd = process.env.NODE_ENV === 'prod'
 
 let plugins = [
@@ -34,19 +44,20 @@ let plugins = [
 ]
 
 if (isProd) {
-  plugins.push(
+  /* plugins.push(
     new HtmlWebpackNosPlugin({
       nosUpload,
       output: false
     })
-  )
+  ) */
 } else {
   plugins.push(
     new webpack.HotModuleReplacementPlugin()
   )
 }
 
-module.exports = {
+
+var webpackConfig = {
   devServer: {
     proxy: [
       {
@@ -62,10 +73,15 @@ module.exports = {
     hotOnly: true,
     headers: {"Access-Control-Allow-Origin": "*"},
     hot: true,
-    port: 9090
+    port: 9090,
+    compress: true,
+    headers: {
+      'X-foo': 'bar'
+    }
   },
   output: {
-    filename: '[name]-[hash:8].js',
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'js/[name].[hash].js',
     publicPath: '/'
   },
   mode: process.env.NODE_ENV === 'prod' ? 'production' : 'development',
@@ -161,3 +177,9 @@ module.exports = {
     ]
   }
 }
+
+if (!isProd) {
+  webpackConfig.devtool = 'cheap-module-eval-source-map'
+}
+
+module.exports = webpackConfig

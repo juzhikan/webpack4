@@ -42,8 +42,10 @@ export default {
         }
     },
     created () {
+        var title = '跟着文字去冒险'
+    
         setOrUpdate({
-            title: '跟着文字去冒险',
+            title,
             description: '5款超好玩的互动漫画登录网易漫画啦！体验还有机会免费获得7天VIP和周边礼包哟~  ',
             activityId: '20180904',
             picurl: 'https://easyread.nosdn.127.net/web/trunk/1536030825097/share.jpg',

@@ -1,11 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <title><%= htmlWebpackPlugin.options.title %></title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="applicable-device" content="mobile">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <title>跟着文字去冒险</title>
     <script>
       (function(doc,win){
         var docEl = document.documentElement,
@@ -27,7 +27,7 @@
                     win.PG_CONFIG.rem = Math.pow(rem , 2) / dw;
                     docEl.style.fontSize = win.PG_CONFIG.rem + 'px';
                 }
-            } , 200)
+            }, 200)
         }
         recacl()
         win.addEventListener(resizeEvt,recacl);
