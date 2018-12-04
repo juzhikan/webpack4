@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:short": "webpack-dev-server --hot --config config/short.js",
-    "build:short": "cross-env NODE_ENV=prod webpack --config config/short.js --mode production",
-    "build": "yarn run build:short"
+    "dev:pageName": "webpack-dev-server --hot --config config/pageName.js",
+    "build:pageName": "cross-env NODE_ENV=prod webpack --config config/pageName.js --mode production",
+    "build": "yarn run build:pageName"
   },
   "keywords": [],
   "author": "",
@@ -35,7 +35,6 @@
     "babel-plugin-import": "^1.7.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-polyfill": "^6.26.0",
     "babel-preset-stage-2": "^6.24.1",
     "cross-env": "^5.1.5",
     "file-loader": "^1.1.11",

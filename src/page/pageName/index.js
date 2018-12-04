@@ -1,8 +1,8 @@
 import '@/common/normal.css'
 import '@/common/common.css'
-import './instruction/index.css'
+import './index.css'
 import Vue from 'vue'
-import App from './instruction/App.vue'
+import App from './App.vue'
 
 new Vue({
   render: h => h(App)
